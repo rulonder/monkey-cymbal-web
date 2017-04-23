@@ -1,0 +1,42 @@
+{
+  "rules": {
+    ".read": "auth.uid === 'monkey-worker'",
+    ".write": "auth.uid === 'monkey-worker'",
+    "measurements":{
+      ".read": "auth != null",
+      "temp":{".indexOn": ["date"]}
+      ,"humidity":{".indexOn": ["date"]}
+    },
+      "petitions": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": ["date"],
+      "$petition_id": {
+        // the list of messages in a room can be enumerated and each
+        // message could also be read individually, the list of messages
+        // for a room cannot be written to in bulk
+        ".read": true,
+          // a new message can be created if it does not exist, but it
+          // cannot be modified or deleted
+          ".write": "!data.exists() && newData.exists()",
+          // the room attribute must be a valid key in room_names/ (the room must exist)
+          // the object to write must have a name, message, and timestamp
+          ".validate": "newData.hasChildren(['action', 'user', 'date'])",
+
+          // the name must be a string, longer than 0 chars, and less than 20 and cannot contain "admin"
+          "user": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length < 20 && !newData.val().contains('admin')" },
+
+          // the message must be longer than 0 chars and less than 50
+          "action": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length < 50" },
+
+          // messages cannot be added in the past or the future
+          // clients should use firebase.database.ServerValue.TIMESTAMP
+          // to ensure accurate timestamps
+          "date": { ".validate": "newData.val() <= now" },
+
+          // no other fields can be included in a message
+          "$other": { ".validate": false }
+        }
+      }
+  }
+}

@@ -1,0 +1,277 @@
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    #AppContent {
+      display: -webkit-flex;
+      display: flex;
+      height: 100%;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+    }
+
+    .Aligner {
+      height: 90%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #container_graph,
+    #container_button,
+    #container_button {
+      display: none
+    }
+
+    #container_button.hidder:hover #mainButton {
+      display: none;
+    }
+
+    .parent {
+      height: 0;
+      padding-bottom: 0%;
+      /* 16:9 */
+      position: relative;
+    }
+
+    h1 {
+      font-size: 4em;
+    }
+
+    .child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .simpleButton {
+      padding: 1em;
+      font-size: 2em;
+      color: #006BFF;
+    }
+
+    .simpleButton:hover {
+      color: #24005E;
+    }
+
+    .circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      min-width: 200px;
+      min-height: 200px;
+      background: #333;
+      color: white;
+      -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+      transition: width 2s, height 2s, background-color 2s, transform 2s;
+      -webkit-box-shadow: 10px 10px 19px -5px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 10px 10px 19px -5px rgba(0, 0, 0, 0.75);
+      box-shadow: 10px 10px 19px -5px rgba(0, 0, 0, 0.75);
+      transition: box-shadow 0.3s ease-in-out;
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      -khtml-user-select: none;
+      /* Konqueror HTML */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none;
+      /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+    }
+
+    .activated {
+      color: #F80;
+    }
+
+    .circle:hover {
+      -webkit-box-shadow: 10px 10px 19px -5px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 10px 10px 19px -5px rgba(0, 0, 0, 0.75);
+      box-shadow: 10px 10px 19px -5px rgba(0, 0, 0, 0.75);
+    }
+
+    .circle:active {
+      background: #333;
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .Aligner-item {
+      max-width: 50%;
+    }
+
+    .Aligner-item--bottom {
+      height: 20%;
+      max-width: 50%;
+      -webkit-flex: 9 0 0;
+      flex: 9 0 0;
+      align-self: flex-end;
+    }
+
+    .hidden {
+      display: none
+    }
+
+    #footer {
+      height: 10%;
+      background: #333;
+      color: white;
+      width: 100%;
+      -webkit-box-shadow: 0px 0px 23px 3px rgba(0, 0, 0, 0.63);
+      -moz-box-shadow: 0px 0px 23px 3px rgba(0, 0, 0, 0.63);
+      box-shadow: 0px 0px 23px 3px rgba(0, 0, 0, 0.63);
+    }
+
+    #loggedContainer {
+      height: 100%;
+      width: 100%;
+    }
+
+    #unloggedContainer {
+      height: 100%;
+      width: 100%;
+    }
+
+    .rowflexcontainer {
+      width: 100%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex: 1 0 0;
+      flex: 1 0 0;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+    }
+
+    .smallitem {
+      -webkit-flex: 1 0 0;
+      flex: 1 0 0;
+      text-align: center;
+    }
+
+    .usercard {
+      /* Add shadows to create the "usercard" effect */
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+    /* Add some padding inside the usercard container */
+
+    .usercontainer {
+      padding: 2px 16px;
+    }
+
+    .material-icons {
+      vertical-align: middle;
+      font-size: 3em;
+    }
+
+    .material-icons:hover {
+      color: #F80;
+    }
+    /* D3 styling*/
+
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 2px;
+    }
+
+    .svg-container {
+      display: flex;
+      flex: 1 1 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .svg-content-responsive {
+      display: flex;
+      flex: 1 1 0;
+    }
+
+    .vertical {
+      flex-direction: column;
+    }
+
+    #measurements {
+      height: 80%;
+      width: 100%;
+    }
+    /* ver small screens */
+
+    @media only screen and (max-width: 450px) {
+      h1 {
+        font-size: 3em;
+        margin: 0;
+      }
+      .simpleButton {
+        padding: 0.5em;
+        font-size: 1.5em;
+        color: #006BFF;
+      }
+      .material-icons {
+        vertical-align: middle;
+        font-size: 2em;
+      }
+      .smallitem p {
+        margin: 0;
+      }
+    }
+    /* Too wide */
+
+    @media only screen and (min-width: 800px) {
+      /* Styles */
+      .hidden {
+        display: none
+      }
+      .rowflexcontainer {
+        height: 100%;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex: 0 0 70px;
+        flex: 0 0 70px;
+      }
+      .Aligner {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #AppContent {
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+      }
+      .smallitem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #footer {
+        height: 100%;
+        float: left;
+        width: 10%;
+        order: -1;
+        -webkit-flex: 0 0 70px;
+        flex: 0 0 70px;
+      }
+    }

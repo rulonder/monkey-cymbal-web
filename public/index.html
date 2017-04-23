@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Play the cymbals</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="theme-color" content="#333">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
+  <!-- charts -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <!-- custom files -->
+  <link type="text/css" rel="stylesheet" href="custom.css" />
+  <script src="bundle.js"></script>
+</head>
+
+<body>
+  <div id="AppContent">
+    <div id="container_button" class="Aligner">
+      <div class="Aligner-item ">
+        <div  class="circle" id="mainButton" onclick="requestToMOnkey()">CLICK</div>
+      </div>
+    </div>
+    <div id="container_user" class="Aligner">
+      <div class="Aligner-item">
+        <div class="usercard">
+          <img id="userimg" src="" alt="Avatar"
+            style="width:100%">
+          <div class="usercontainer">
+            <h1><b id="username">John Doe</b></h1>
+            <p></p>
+            <div class='simpleButton' id='simpleButton' onclick="logout()"> LOGOUT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container_graph" class="Aligner vertical">
+      <h1>Temperature</h1>
+      <div id="measurements"></div>
+    </div>
+    <div id="footer">
+      <div id="loggedContainer" class="hidden">
+        <div class="rowflexcontainer">
+          <div class="smallitem" id='selector_button' onclick="select_button_tab()"> <i class="material-icons">touch_app</i></div>
+          <div class="smallitem" id='selector_graph' onclick="select_button_graph()"> <i class="material-icons">timeline</i></div>
+          <div class="smallitem" id='selector_user' onclick="select_user_tab()"> <i class="material-icons">&#xE853;</i></div>
+        </div>
+      </div>
+      <div id="unloggedContainer">
+        <div class="rowflexcontainer">
+          <div class="smallitem" id="loginDialog" onclick="openLoginUI()" style='padding:1em'> <i class="large material-icons">person</i>
+            <p>Login</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="AuthContent">
+    <div id="firebaseui-auth-container"></div>
+  </div>
+
+
+</body>
+
+</html>
