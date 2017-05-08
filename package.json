@@ -4,16 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"browserify web/index.js -o public/bundle.js",
+    "build": "browserify web/index.js -o public/bundle.js",
     "build_compress": "browserify web/index.js | uglifyjs --mangle toplevel --compress dead_code=true -o public/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "caw": "^2.0.0",
+    "express": "^4.15.2",
     "firebase": "^3.8.0",
     "firebase-admin": "^4.2.1",
-    "serialport": "^4.0.7"
+    "morgan": "^1.8.1",
+    "serialport": "^4.0.7",
+    "sqlite3": "^3.1.8",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "browserify": "^14.3.0",
